@@ -110,11 +110,17 @@ public class MastermindGUIView extends Application {
 			try {
 				// Check whether or not the input is correct (by asking the controller)
 				if (controller.isCorrect(guess) == true) {
+					//Display the winning guess
+					displayGuessHistory(guess, vbox);
 					results("win");
+				} else if(guessNum == 10 && controller.isCorrect(guess) == false){ 
+					// The game ends if the player guesses wrong in all 10 attempts else 
+					results("lose");
+				} else if (gameStatus == true) {
+					//Display the guess history after each incorrect guess
+					displayGuessHistory(guess, vbox);
 				}
-				//Display the guess history after each incorrect guess
-				displayGuessHistory(guess, vbox);
-
+				
 			} catch (MastermindIllegalLengthException e) {
 				e.printStackTrace();
 			} catch (MastermindIllegalColorException e) {
@@ -125,10 +131,7 @@ public class MastermindGUIView extends Application {
 			guessNum += 1; 
 			reset();
 
-			// The game ends if the player guesses wrong in all 10 attempts
-			if(guessNum > 10){
-				results("lose");
-			}
+			
 		});
 
 		//Set and show stage 
@@ -179,7 +182,7 @@ public class MastermindGUIView extends Application {
 		if (result.equals("win")) {
 			a.setContentText("You won!");
 		} else {
-			a.setContentText("You have exceed the guess limit\n" + "Correct answer is " + getSolution());
+			a.setContentText("You lost due to exceeding the guess limit\n" + "Correct answer is " + getSolution());
 		}
 		a.setHeaderText("Message");
 		a.showAndWait();
