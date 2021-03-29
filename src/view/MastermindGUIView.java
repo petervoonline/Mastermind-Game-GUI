@@ -48,7 +48,6 @@ public class MastermindGUIView extends Application {
 	private static int guessNum = 1; // The number of time the players has guessed
 	private static boolean gameStatus = true; //true if the game is still ongoing and false if it ended
 
-
 	public static void main(String[] args) {
 		colors = new ArrayList<String>();
 		// Add all the letters that represent the 6 colors in the list
@@ -95,7 +94,7 @@ public class MastermindGUIView extends Application {
 				a.showAndWait();
 				return;
 			}
-
+			
 			//If the player didn't fill out all the circles with colors
 			if (circle1.getFill() == Color.BLACK || circle2.getFill() == Color.BLACK || 
 					circle3.getFill() == Color.BLACK || circle4.getFill() == Color.BLACK) {
@@ -114,7 +113,7 @@ public class MastermindGUIView extends Application {
 					displayGuessHistory(guess, vbox);
 					results("win");
 				} else if(guessNum == 10 && controller.isCorrect(guess) == false){ 
-					// The game ends if the player guesses wrong in all 10 attempts else 
+					// The game ends if the player guesses wrong in all 10 attempts  
 					results("lose");
 				} else if (gameStatus == true) {
 					//Display the guess history after each incorrect guess
@@ -130,8 +129,6 @@ public class MastermindGUIView extends Application {
 			// update the number of attempts
 			guessNum += 1; 
 			reset();
-
-			
 		});
 
 		//Set and show stage 
@@ -241,14 +238,15 @@ public class MastermindGUIView extends Application {
 	 */
 	private GridPane buildFeedbackPane(String guess) throws MastermindIllegalLengthException, MastermindIllegalColorException {
 		GridPane pane = new GridPane();
+		
 		for (int col = 0; col < controller.getRightColorRightPlace(guess); col++) {
 			pane.add(new Circle(5, Color.BLACK), col, 0);
 		}
-
+		
 		for (int col = 0; col < controller.getRightColorWrongPlace(guess); col++) {
 			pane.add(new Circle(5, Color.WHITE), col, 1);
 		}
-
+		
 		pane.setPadding(new Insets(5));
 		pane.setHgap(5);
 		pane.setVgap(5);
