@@ -56,28 +56,36 @@ Implementation
   ------------
   You are required to continue to use the MVC architectural pattern. You must have the following 5 
   classes:
+  
           1. Mastermind – This is the main class. When invoked with a command line argument of “-text”, 
           you will launch the text-oriented UI. When invoked with a command line argument 0f “-
           window” you’ll launch the GUI view. The default will be the GUI view.
+          
           2. MastermindGUIView – This is the JavaFX GUI as shown above.
+          
           3. MastermindTextView – This is the UI that we built in project 2, moved into a separate view 
           class.
+          
           4. MastermindController – This class contains all the game logic and must be shared by the 
           textual and graphical UIs. You may not call into different controllers from the different UIs and 
           you shouldn’t change the methods from the ones we already found useful.
+          
           5. MastermindModel – This class contains all the game state and must be also shared between 
           the two front ends.
        
 Requirements
 ------------
+
   • A main class, that launches your view using:
   Application.launch(MastermindGUIView.class, args);
   for the GUI version or launches the text version, depending on the commandline argument 
   given.
+  
   • At least the five (5) classes described above, with more if you deem them necessary.
+  
   • The GitHub repository is empty, so after you clone it, in the repository folder (somewhere like 
-  C:\Users\YOUR_USER_NAME\git\csc-335-project-4-GITHUB_USERNAME\) create a new Java Project in eclipse (uncheck “Use default location”, browse to the repository path, and select the 
-  repository folder). Finally, import the files from the previous projects you’d like to start with.
+  C:\Users\YOUR_USER_NAME\git\csc-335-project-4-GITHUB_USERNAME\) create a new Java Project in eclipse (uncheck “Use default location”, browse to the repository path,     and select the  repository folder). Finally, import the files from the previous projects you’d like to start with.
+  
   • Do not forget to add JavaFX to the build path and run configuration as we did in lab 1. 
   
 Submission
