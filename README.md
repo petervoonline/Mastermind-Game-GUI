@@ -1,8 +1,8 @@
-CSC 335 Project 4: Mastermind GUI
+Mastermind GUI
 =================
 Project Description
 ------------
-For this project, we will use JavaFX to create GUI for our Mastermind game. 
+This project uses JavaFX to create GUI for our Mastermind game. 
 We will construct a new MastermindGUIView that is a javafx.application.Application.
 Here is a mockup of the layout:
 
