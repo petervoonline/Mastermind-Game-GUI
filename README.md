@@ -72,22 +72,3 @@ Implementation
           
           5. MastermindModel – This class contains all the game state and must be also shared between 
           the two front ends.
-       
-Requirements
-------------
-
-  • A main class, that launches your view using:
-  Application.launch(MastermindGUIView.class, args);
-  for the GUI version or launches the text version, depending on the commandline argument 
-  given.
-  
-  • At least the five (5) classes described above, with more if you deem them necessary.
-  
-  • The GitHub repository is empty, so after you clone it, in the repository folder (somewhere like 
-  C:\Users\YOUR_USER_NAME\git\csc-335-project-4-GITHUB_USERNAME\) create a new Java Project in eclipse (uncheck “Use default location”, browse to the repository path,     and select the  repository folder). Finally, import the files from the previous projects you’d like to start with.
-  
-  • Do not forget to add JavaFX to the build path and run configuration as we did in lab 1. 
-  
-Submission
-------------
-As always, the last pushed commit prior to the due date will be graded
